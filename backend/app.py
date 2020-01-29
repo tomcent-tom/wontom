@@ -1,8 +1,9 @@
 from flask import Flask
 from flask_cors import CORS
-from functions.tennis import get_tennis_data
+from .functions.tennis import get_tennis_data
 import atexit
 import json
+
 
 from apscheduler.schedulers.background import BackgroundScheduler
 
@@ -29,4 +30,4 @@ def getTennisData():
     )
     return response
 if __name__ == "__main__":
-    app.run()
+    app.run(host='0.0.0.0', port=5000)
